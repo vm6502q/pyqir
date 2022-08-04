@@ -158,10 +158,10 @@ task pyqir-tests -depends init {
 
     exec -workingDirectory (Join-Path $srcPath "pyqir-tests") {
         Invoke-LoggedCommand -wd $pyqir.generator.dir {
-            maturin develop --release --cargo-extra-args="$($env:CARGO_EXTRA_ARGS)"
+            maturin develop --release -- --cargo-extra-args="$($env:CARGO_EXTRA_ARGS)"
         }
         Invoke-LoggedCommand -wd $pyqir.evaluator.dir {
-            maturin develop --release --cargo-extra-args="$($env:CARGO_EXTRA_ARGS)"
+            maturin develop --release -- --cargo-extra-args="$($env:CARGO_EXTRA_ARGS)"
         }
         & $python -m pip install pytest
         & $python -m pytest

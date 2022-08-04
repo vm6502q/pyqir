@@ -16,7 +16,7 @@ rust-version = "1.57"
 llvm-sys-110 = { package = "llvm-sys", version = "110.0.3", optional = true }
 llvm-sys-120 = { package = "llvm-sys", version = "120.2.2", optional = true }
 llvm-sys-130 = { package = "llvm-sys", version = "130.0.2", optional = true }
-llvm-sys-140 = { package = "llvm-sys", version = "140.0.2", optional = true }
+llvm-sys-140 = { package = "llvm-sys", version = "140.0.2", optional = false }
 
 # The llvm version of inkwell is controlled through this crates features.
 inkwell = { git = "https://github.com/TheDan64/inkwell", branch = "master", default-features = false, features = ["target-x86"] }

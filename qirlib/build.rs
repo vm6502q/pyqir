@@ -20,34 +20,34 @@ extern crate regex;
 extern crate semver;
 
 // Make sure one version of llvm features is used
-#[cfg(all(
-    not(any(feature = "llvm11-0")),
-    not(any(feature = "llvm12-0")),
-    not(any(feature = "llvm13-0")),
-    not(any(feature = "llvm14-0")),
-))]
-compile_error!("One of the features `qirlib/llvm11-0`, `qirlib/llvm12-0`, `qirlib/llvm13-0`, and `qirlib/llvm14-0` must be used exclusive.");
+// #[cfg(all(
+//     not(any(feature = "llvm11-0")),
+//     not(any(feature = "llvm12-0")),
+//     not(any(feature = "llvm13-0")),
+//     not(any(feature = "llvm14-0")),
+// ))]
+// compile_error!("One of the features `qirlib/llvm11-0`, `qirlib/llvm12-0`, `qirlib/llvm13-0`, and `qirlib/llvm14-0` must be used exclusive.");
 
 // Make sure only one llvm option is used.
-#[cfg(any(
-    all(
-        feature = "llvm11-0",
-        any(feature = "llvm12-0", feature = "llvm13-0", feature = "llvm14-0")
-    ),
-    all(
-        feature = "llvm12-0",
-        any(feature = "llvm11-0", feature = "llvm13-0", feature = "llvm14-0")
-    ),
-    all(
-        feature = "llvm13-0",
-        any(feature = "llvm11-0", feature = "llvm12-0", feature = "llvm14-0")
-    ),
-    all(
-        feature = "llvm14-0",
-        any(feature = "llvm11-0", feature = "llvm12-0", feature = "llvm13-0")
-    ),
-))]
-compile_error!("Features `qirlib/llvm11-0`, `qirlib/llvm12-0`, `qirlib/llvm13-0`, and `qirlib/llvm14-0` must be used exclusive.");
+// #[cfg(any(
+//     all(
+//         feature = "llvm11-0",
+//         any(feature = "llvm12-0", feature = "llvm13-0", feature = "llvm14-0")
+//     ),
+//     all(
+//         feature = "llvm12-0",
+//         any(feature = "llvm11-0", feature = "llvm13-0", feature = "llvm14-0")
+//     ),
+//     all(
+//         feature = "llvm13-0",
+//         any(feature = "llvm11-0", feature = "llvm12-0", feature = "llvm14-0")
+//     ),
+//     all(
+//         feature = "llvm14-0",
+//         any(feature = "llvm11-0", feature = "llvm12-0", feature = "llvm13-0")
+//     ),
+// ))]
+// compile_error!("Features `qirlib/llvm11-0`, `qirlib/llvm12-0`, `qirlib/llvm13-0`, and `qirlib/llvm14-0` must be used exclusive.");
 
 // Make sure one of the linking features is used
 #[cfg(all(
